@@ -30,4 +30,31 @@ public class Constante {
     public static final int DE_CARRO = 2;
     public static final int DE_ONIBUS = 3;
 
+    public static final Vertice[] VERTICES = new Vertice[]{
+            verticeA,
+            verticeB,
+            verticeC,
+            verticeD,
+            verticeE,
+            verticeF,
+            verticeG,
+            verticeH,
+            verticeI,
+            verticeJ,
+            verticeK,
+            verticeL,
+            verticeM,
+            verticeN,
+            verticeO,
+            verticeP,
+            verticeQ,
+            verticeR
+    };
+
+    public static final int[] TRANSPORTES = new int[]{
+            A_PE,
+            DE_CARRO,
+            DE_ONIBUS
+    };
+
 }

@@ -6,8 +6,64 @@
     android:layout_height="match_parent"
     tools:context="br.com.dalcim.dijkstra.MainActivity">
 
+    <LinearLayout
+        android:id="@+id/filto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Spinner
+            android:id="@+id/spn_origem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:entries="@array/vertices"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=":"/>
+
+        <Spinner
+            android:id="@+id/spn_destino"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:entries="@array/vertices"/>
+
+        <Spinner
+            android:id="@+id/spn_transporte"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:entries="@array/transporte" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:onClick="buscar"
+            android:text="Buscar"/>
+
+    </LinearLayout>
+
     <View
+        android:layout_below="@id/filto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/mapa"/>
+
+    <TextView
+        android:id="@+id/resultado"
+        android:layout_alignParentBottom="true"
+        android:paddingBottom="5dp"
+        android:paddingLeft="8dp"
+        android:paddingTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/degrade"
+        android:textColor="#CCC"
+        tools:text="resultado"/>
 </RelativeLayout>

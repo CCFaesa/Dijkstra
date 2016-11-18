@@ -71,7 +71,7 @@ public class Geradora {
         verticeF.addAresta(verticeE, 2);
         verticeF.addAresta(verticeJ, 3, 8, 3);
 
-        verticeG.addAresta(verticeE,2, 2, Integer.MAX_VALUE);
+        verticeG.addAresta(verticeE,2);
         verticeG.addAresta(verticeK,4, 4, Integer.MAX_VALUE);
 
         verticeH.addAresta(verticeB, 8);
@@ -80,6 +80,7 @@ public class Geradora {
         verticeI.addAresta(verticeC, Integer.MAX_VALUE, 9, 9);
         verticeI.addAresta(verticeH, 3, 3, Integer.MAX_VALUE);
         verticeI.addAresta(verticeJ, 4, 13, Integer.MAX_VALUE);
+        verticeI.addAresta(verticeL, 2);
 
         verticeJ.addAresta(verticeF, 3, 8, 3);
         verticeJ.addAresta(verticeI, 4, 13, Integer.MAX_VALUE);
