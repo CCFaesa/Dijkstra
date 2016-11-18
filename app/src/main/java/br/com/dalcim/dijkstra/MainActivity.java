@@ -4,6 +4,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
@@ -27,7 +29,9 @@ public class MainActivity extends AppCompatActivity {
     private Spinner spnDestino;
     private Spinner spnTransporte;
     private TextView txtResultado;
+    private View mapa;
     private Grafo grafo;
+    private int tipoMapa = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         spnDestino = (Spinner) findViewById(R.id.spn_destino);
         spnTransporte = (Spinner) findViewById(R.id.spn_transporte);
 
+        mapa = findViewById(R.id.mapa);
         txtResultado = (TextView) findViewById(R.id.resultado);
 
         spnOrigem.setAdapter(new ArrayAdapter<String>(this, R.layout.text_spinner, getResources().getStringArray(R.array.vertices)));
@@ -144,5 +149,23 @@ public class MainActivity extends AppCompatActivity {
 
             txtResultado.setText(stb);
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        menu.add("mudar mapa");
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(tipoMapa == 1){
+            mapa.setBackgroundResource(R.drawable.mapacompeso);
+            tipoMapa = 0;
+        }else{
+            mapa.setBackgroundResource(R.drawable.mapa);
+            tipoMapa = 1;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
