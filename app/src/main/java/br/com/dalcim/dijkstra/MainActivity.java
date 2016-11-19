@@ -71,12 +71,14 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected Void doInBackground(Void... voids) {
+            Comparator<Vertice> comparator = Comparadora.getComparator();
+            int custoDaAresta;
+
+
             ArrayList<Vertice> lista = new ArrayList<>();
             Vertice verticeVisitado;
             Vertice vizinho;
-            int custoDaAresta;
 
-            Comparator<Vertice> comparator = Comparadora.getComparator();
 
             for (Vertice vertice : grafo.getVertices()) {
                 vertice.setCustoAte(Integer.MAX_VALUE);
